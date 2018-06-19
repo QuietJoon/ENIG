@@ -1,0 +1,27 @@
+name:                ENIG
+version:             0.0.0.1
+github:              "QuietJoon/ENIG"
+license:             BSD3
+author:              "YongJoon Joe"
+maintainer:          "developer+ENIG@quietjoon.net"
+copyright:           "2016-2018 YongJoon Joe"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# synopsis:            Auto Korean conjugator/adjustor/adopter/converter
+# category:            Natural Language
+
+description:         Please see the README on GitHub at <https://github.com/QuietJoon/ENIG#readme>
+
+library:
+  source-dirs: src
+  dependencies:
+  - base >= 4.7 && < 5
+  - text
+  - vector
+  - unicode-transforms
+  exposed-modules:
+  - Data.Text.ENIG
+
