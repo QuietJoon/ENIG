@@ -4,7 +4,7 @@ github:              "QuietJoon/ENIG"
 license:             BSD3
 author:              "YongJoon Joe"
 maintainer:          "developer+ENIG@quietjoon.net"
-copyright:           "2016-2018 YongJoon Joe"
+copyright:           "2016-2019 YongJoon Joe"
 
 extra-source-files:
 - README.md
@@ -24,4 +24,3 @@ library:
   - unicode-transforms
   exposed-modules:
   - Data.Text.ENIG
-
