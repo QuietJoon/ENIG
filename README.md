@@ -2,12 +2,12 @@ ENIG
 ====
 
 ENIG is a acronym of typical Korean particles "Eun Neun I Ga (은는이가)".
-Korean postposition particles changes its form from the pronounciation of previous consonant.
-However, this puts programmers trouble because figure out the previous consonant is not easy problem.
-Therefore, many of programmers who handles Korean treat Korean strings like "SOMETHING은(는) ~~".
-This seems to be ugly like "SOMETHING is(are), Two apple(s)."
+Korean postposition particles changes their form depending on the pronounciation of previous consonant.
+However, in trouble because figuring out the previous consonant is not an easy problem.
+Therefore, most of the programmers who handle Korean treat Korean by starting with "SOMETHING은(는) ~~".
+This seems to be awkward like "SOMETHING is(are), Two apple(s)."
 
-ENIG focuses on programmers who handling Korean strings.
+ENIG focuses on programmers handle Korean strings.
 
 ## Long-range Plans
 
