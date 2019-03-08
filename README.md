@@ -18,3 +18,22 @@ ENIG focuses on programmers to handle Korean strings.
 ### English
 
 * Managing English string which involves plural/singular form.
+
+## Known Issues
+
+### Get error like `hGetContents: invalid argument`
+
+When you got a message during test the library like:
+
+    test\Test\ENIG\Data.hs:16:9: error:
+        ? Exception when trying to run compile-time code:
+            test\Test\ENIG\Data.hs: hGetContents: invalid argument (invalid byte sequence)
+          Code: testGroupGenerator
+        ? In the untyped splice: $(testGroupGenerator)
+       |
+    16 | tests = $(testGroupGenerator)
+       |         ^^^^^^^^^^^^^^^^^^^^^
+
+
+This is not program error.
+You should set your shell's encoding by `chcp 65001` or `export LC_ALL=en_US.UTF-8`.

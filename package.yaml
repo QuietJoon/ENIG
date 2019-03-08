@@ -22,5 +22,25 @@ library:
   - text
   - vector
   - unicode-transforms
-  exposed-modules:
-  - Data.Text.ENIG
+
+tests:
+  ENIG-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    default-extensions:
+    - TemplateHaskell
+    dependencies:
+    - ENIG
+    - HUnit
+    - QuickCheck
+    - test-framework
+    - test-framework-hunit
+    - test-framework-quickcheck2
+    - test-framework-th
+    - base
+    - text
+    - unicode-transforms
