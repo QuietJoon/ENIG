@@ -6,9 +6,9 @@ import qualified Data.Text               as T
 
 
 -- TODO: Optimize order of PPPI by Hangul statistical data
--- EN: 은/는, EL: 을/를, IG: 이/가, WG: 와/과, Ix: 이/null
-data PPPCategory = EN | EL | IG | WG | IX
+-- EN: 은/는, EL: 을/를, IG: 이/가, WG: 와/과, Ix: 이/null, Eux: 으/null
+data PPPCategory = EN | EL | IG | WG | IX | EuX
                       deriving (Eq,Ord,Enum,Bounded,Show,Read)
 
-data PPPIdentity  = Eun | Neun | Eul | Leul | I | Ga | Wa | Gwa | Ix | X
+data PPPIdentity  = Eun | Neun | Eul | Leul | I | Ga | Wa | Gwa | Ix | Eux | X
                       deriving (Eq,Ord,Enum,Bounded,Show,Read)

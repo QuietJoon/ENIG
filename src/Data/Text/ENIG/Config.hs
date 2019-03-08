@@ -24,4 +24,6 @@ pppidVector = V.fromList
   ,(fromEnum Eul,fromEnum Leul)
   ,(fromEnum I,fromEnum Ga)
   ,(fromEnum Gwa,fromEnum Wa)
-  ,(fromEnum Ix,fromEnum X)]
+  ,(fromEnum Ix,fromEnum X)
+  ,(fromEnum Eux,fromEnum X)
+  ]

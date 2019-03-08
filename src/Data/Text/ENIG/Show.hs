@@ -14,6 +14,7 @@ tShowPPPCa EL = "을(를)"
 tShowPPPCa IG = "이(가)"
 tShowPPPCa WG = "와(과)"
 tShowPPPCa IX = "(이)"
+tShowPPPCa EuX = "(으)"
 
 sShowPPPCa :: PPPCategory -> String
 sShowPPPCa = T.unpack . tShowPPPCa
@@ -28,6 +29,7 @@ tShowPPPId Ga   = "가"
 tShowPPPId Wa   = "와"
 tShowPPPId Gwa  = "과"
 tShowPPPId Ix  = "이"
+tShowPPPId Eux  = "으"
 tShowPPPId X   = ""
 
 sShowPPPId :: PPPIdentity -> String
