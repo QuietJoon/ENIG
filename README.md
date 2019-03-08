@@ -17,4 +17,4 @@ ENIG focuses on programmers to handle Korean strings.
 
 ### English
 
-* Managing Korean string which involves plural/singular form.
+* Managing English string which involves plural/singular form.
