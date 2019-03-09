@@ -25,6 +25,10 @@ isLastVowel :: Int -> Bool
 isLastVowel hangulCode =
   (head vowelCodeList <= hangulCode) && (hangulCode <= last vowelCodeList)
 
+-- Just for the last consonant 'ㄹ'
+isLastR :: Int -> Bool
+isLastR hangulCode = hangulCode == 4527
+
 isHangul :: Int -> Bool
 isHangul mHangulCode =
   (head hangulComponentCodeList <= mHangulCode) && (mHangulCode <= last hangulComponentCodeList)

@@ -22,13 +22,14 @@ enigPPP :: Text -> PPPCategory -> Text
 enigPPP inputStr pppCa =
   if isHangul lastComponent
     then tShowPPPId . (toEnum :: Int -> PPPIdentity) $
-      if isLastVowel lastComponent
+      if isSecondType
         then snd selectedPPPIPair
         else fst selectedPPPIPair
     else if isDigit lastComponent
       then error "enigPPPByDigit is not implemented"
       else tShowPPPCa pppCa
   where
+    isSecondType = isLastVowel lastComponent || (pppCa == EuX && isLastR lastComponent)
     selectedPPPIPair = pppidVector V.! fromEnum pppCa
     -- preprocessForPPP for handling parenthesis, quatation, etc.
     preprocessForPPP = id
