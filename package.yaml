@@ -10,8 +10,8 @@ extra-source-files:
 - README.md
 - ChangeLog.md
 
-# synopsis:            Auto Korean conjugator/adjustor/adopter/converter
-# category:            Natural Language
+synopsis:            Auto Korean conjugator/adjustor/adopter/converter
+category:            Natural Language Processing
 
 description:         Please see the README on GitHub at <https://github.com/QuietJoon/ENIG#readme>
 
