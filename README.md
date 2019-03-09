@@ -21,19 +21,11 @@ ENIG focuses on programmers to handle Korean strings.
 
 ## Known Issues
 
-### Get error like `hGetContents: invalid argument`
+### When you get error like `invalid argument` or `invalid character`
 
-When you got a message during test the library like:
-
-    test\Test\ENIG\Data.hs:16:9: error:
-        ? Exception when trying to run compile-time code:
-            test\Test\ENIG\Data.hs: hGetContents: invalid argument (invalid byte sequence)
-          Code: testGroupGenerator
-        ? In the untyped splice: $(testGroupGenerator)
-       |
-    16 | tests = $(testGroupGenerator)
-       |         ^^^^^^^^^^^^^^^^^^^^^
-
+When you get a message during test the library like `invalid argument` or `invalid character`, check your language configuration.
 
 This is not program error.
-You should set your shell's encoding by `chcp 65001` or `export LC_ALL=en_US.UTF-8`.
+
+Because of this library handling Hangul itself, the test code should contains Korean characters.
+Therefore, You should set your shell's encoding by `chcp 65001` for Windows or `export LC_ALL=en_US.UTF-8` for *nix platforms.
