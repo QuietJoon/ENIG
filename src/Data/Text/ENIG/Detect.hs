@@ -16,23 +16,27 @@ import Data.Text.Normalize
 import qualified Data.Vector.Unboxed as V
 
 
+-- | Detect whether the last component is an last consonant or not
 isLastConsonant :: Int -> Bool
 isLastConsonant hangulCode =
   (head lastConsonantCodeList <= hangulCode) && (hangulCode <= last lastConsonantCodeList)
 
--- To avoid the issue with the first consonant, like 'ㄱ'.
+-- | Detect whether the last component is an vowel or not
+--   To avoid the issue with the first consonant, like 'ㄱ'.
 isLastVowel :: Int -> Bool
 isLastVowel hangulCode =
   (head vowelCodeList <= hangulCode) && (hangulCode <= last vowelCodeList)
 
--- Just for the last consonant 'ㄹ'
+-- | Detect whether the last component is the last consonant 'ㄹ'
 isLastR :: Int -> Bool
 isLastR hangulCode = hangulCode == 4527
 
+-- | Detect whether the given code is an Hangul component or not
 isHangul :: Int -> Bool
 isHangul mHangulCode =
   (head hangulComponentCodeList <= mHangulCode) && (mHangulCode <= last hangulComponentCodeList)
 
+-- | Get the last component's code of given Hangel
 getLastComponentCode :: Text -> Int
 getLastComponentCode str = ord aComponent
   where
