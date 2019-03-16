@@ -2,6 +2,14 @@
 
 ## [Unreleased]
 
+## [0.0.0.2] -- 2019-03-16
+
+### Changed
+* Could handle `아/야` and `으/null`
+
+### Added
+* Add Haddock documentation comments
+
 ## [0.0.0.1] -- 2018-06-20
 
 ### Changed
