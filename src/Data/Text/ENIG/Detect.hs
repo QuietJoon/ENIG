@@ -1,5 +1,3 @@
-{-# LANGUAGE OverloadedStrings #-}
-
 module Data.Text.ENIG.Detect where
 
 import Data.Text.ENIG.Config

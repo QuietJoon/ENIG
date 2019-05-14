@@ -26,15 +26,14 @@ import qualified Data.Vector.Unboxed as V
 -- >>> enigPPP "무엇" WG
 -- "과"
 enigPPP :: Text -> PPPCategory -> Text
-enigPPP inputStr pppCa =
-  if isHangul lastComponent
-    then tShowPPPId . (toEnum :: Int -> PPPIdentity) $
+enigPPP inputStr pppCa
+  | isHangul lastComponent =
+    tShowPPPId . (toEnum :: Int -> PPPIdentity) $
       if isSecondType
         then snd selectedPPPIPair
         else fst selectedPPPIPair
-    else if isDigit lastComponent
-      then error "enigPPPByDigit is not implemented"
-      else tShowPPPCa pppCa
+  | isDigit lastComponent = error "enigPPPByDigit is not implemented"
+  | otherwise = tShowPPPCa pppCa
   where
     isSecondType = isLastVowel lastComponent || (pppCa == EuX && isLastR lastComponent)
     selectedPPPIPair = pppidVector V.! fromEnum pppCa
@@ -53,5 +52,5 @@ enigPPP inputStr pppCa =
 -- >>> enigPPP "무엇" EuX "로"
 -- "으로"
 enigPPPWithPost :: Text -> PPPCategory -> Text -> Text
-enigPPPWithPost inputStr pppCa postStr = T.append (enigPPP inputStr pppCa) postStr
+enigPPPWithPost inputStr pppCa = T.append (enigPPP inputStr pppCa)
 
