@@ -19,6 +19,7 @@ import qualified Data.Vector.Unboxed as V
 
 
 -- | Return proper and minimal PPP about given text
+--
 --   주어진 단어와 조사의 종류에 대해서 최소한의 적절한 조사의 문자열을 반환함
 --
 -- >>> enigPPP "과자" WG
@@ -45,6 +46,7 @@ enigPPP inputStr pppCa
     isDigit _ = False
 
 -- | Return proper PPP about given text with post text
+--
 --   주어진 단어와 조사의 종류에 대해서 적절한 조사의 문자열을 반환함
 --
 -- >>> enigPPP "과자" EuX "로"
@@ -54,10 +56,7 @@ enigPPP inputStr pppCa
 enigPPPWithPost :: Text -> PPPCategory -> Text -> Text
 enigPPPWithPost inputStr pppCa = T.append (enigPPP inputStr pppCa)
 
-
 {-
-
-
 # Pattern
 
 * 무엇(으)로
@@ -78,8 +77,15 @@ enigPPPWithPost inputStr pppCa = T.append (enigPPP inputStr pppCa)
 1. Implement with 'List'
 2. Implement with tail recursive with 'Char' and 'Text'
 -}
+
 -- | Find replacing pattern and apply enigPPP from given text automatically
--- TODO: Now working by reverse order.
+--
+--   주어진 문자열에서 변환할 조사 패턴를 알아서 찾아서 바꿔줌
+--
+-- >>> enigAuto "과자(으)로"
+-- "과자로"
+-- >>> enigAuto "무엇(으)로"
+-- "무엇으로"
 enigAuto :: Text -> Text
 -- ERROR: Qualified name in binding position: T.empty
 -- enigAuto T.empty = T.empty
