@@ -1,3 +1,5 @@
+{-# LANGUAGE OverloadedStrings #-}
+
 module Data.Text.ENIG.Config where
 
 
@@ -5,7 +7,9 @@ import Data.Text.ENIG.Data
 
 
 import Data.Char
-import qualified Data.Vector.Unboxed as V
+import Data.Text (Text)
+import qualified Data.Vector.Unboxed as VU
+import qualified Data.Vector as V
 
 -- | List of the last consonants' code (NFKDed)
 --
@@ -45,8 +49,8 @@ hangulComponentList = map chr hangulComponentCodeList
 -- | PPP corresponding list
 --
 --   조사 대응 리스트
-pppidVector :: V.Vector (Code,Code)
-pppidVector = V.fromList
+pppidVector :: VU.Vector (Code,Code)
+pppidVector = VU.fromList
   [(fromEnum Eun,fromEnum Neun)
   ,(fromEnum Eul,fromEnum Leul)
   ,(fromEnum I,fromEnum Ga)
@@ -54,4 +58,23 @@ pppidVector = V.fromList
   ,(fromEnum A,fromEnum Ya)
   ,(fromEnum Ix,fromEnum X)
   ,(fromEnum Eux,fromEnum X)
+  ]
+
+-- autoPatternList :: V.Vector Text
+-- autoPatternList = V.fromList
+autoPatternList :: [(Text,PPPCategory,Text)]
+autoPatternList =
+  [ ("은(는)",EN,"")
+  , ("을(를)",EL,"")
+  , ("이(가)",IG,"")
+  , ("와(과)",WG,"")
+  , ("아(야)",AY,"")
+  , ("(이)나",IX,"나")
+  , ("(이)든",IX,"든")
+  , ("(이)란",IX,"란")
+  , ("(이)랑",IX,"랑")
+  , ("(이)면",IX,"면")
+  , ("(이)여",IX,"여")
+  , ("(으)로",EuX,"로")
+  -- , "(이)다" - Not yet defined
   ]

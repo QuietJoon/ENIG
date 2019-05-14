@@ -2,7 +2,15 @@
 
 ## [Unreleased]
 
-* Add `enigAuto` which takes just string(`Text`) and returns just string(`Text`)
+* Optimized `enigAuto`
+  * Current version is just a proof of concept. This should be optimized.
+  * Use `Builder`
+* Enough test cases for `enigAuto`
+
+## [0.0.1.0] -- 2019-05-14
+
+### Added
+* Add `enigAuto` which takes just string(`Text`) and process automatically. It returns just string(`Text`)
 
 ## [0.0.0.2] -- 2019-03-16
 
@@ -18,6 +26,6 @@
 * Use `unicode-transforms` instead of `text-icu`
 
 ### Added
-* Reimplement ENIG with features 2016 and 2018 only
-  * Reimplementing features 2017 is postponed
+* Re-implement ENIG with features 2016 and 2018 only
+  * Re-implementing features 2017 is postponed
 * Implement handy functions
