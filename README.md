@@ -17,7 +17,7 @@ ENIG focuses on programmers to handle Korean strings.
 
 You can get proper Korean particle by giving `enigPPP` post word and a Korean postposition particle category `
 
-### Handy functions (Not yet implemented)
+### Handy functions
 
 You can use ENIG without any integration on your code by `enigAuto`.
 When you give a text like "과자이(가) 두개입니다." to `enigAuto` like `enigAuto "과자이(가) 두개입니다."`, the function returns `"과자가 두개입니다."`
