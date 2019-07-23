@@ -15,7 +15,7 @@ ENIG focuses on programmers to handle Korean strings.
 
 #### enigPPP
 
-You can get proper Korean particle by giving `enigPPP` post word and a Korean postposition particle category `
+You can get a proper Korean particle by giving `enigPPP` post word and a Korean postposition particle category.
 
 ### Handy functions
 
@@ -35,11 +35,14 @@ When you give a text like "과자이(가) 두개입니다." to `enigAuto` like `
 
 ## Known Issues
 
-### When you get error like `invalid argument` or `invalid character`
+### When you get an error like `invalid argument` or `invalid character`
 
-When you get a message during test the library like `invalid argument` or `invalid character`, check your language configuration.
+When you get a message like `invalid argument` or `invalid character` during the library test, check the language configuration of your shell.
 
-This is not program error.
+This error does not mean a program bug.
 
-Because of this library handling Hangul itself, the test code should contains Korean characters.
-Therefore, You should set your shell's encoding by `chcp 65001` for Windows or `export LC_ALL=en_US.UTF-8` for *nix platforms.
+Because of this library handling Hangul itself, the test code should contain Korean characters encoded by UTF-8.
+However, when your shell's language configuration is not set to Unicode(UTF-8), the compiler assumes the code's encoding as the system's default language setting.
+This behavior leads the compiler fails to read the code and put the error message like above.
+
+Therefore, you should set your shell's encoding by `chcp 65001` for Windows or `export LC_ALL=en_US.UTF-8` for *nix platforms before testing the library.
