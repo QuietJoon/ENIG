@@ -34,7 +34,7 @@ isHangul :: Int -> Bool
 isHangul mHangulCode =
   (head hangulComponentCodeList <= mHangulCode) && (mHangulCode <= last hangulComponentCodeList)
 
--- | Get the last component's code of given Hangel
+-- | Get the last component's code of given Hangul
 getLastComponentCode :: Text -> Int
 getLastComponentCode str = ord aComponent
   where

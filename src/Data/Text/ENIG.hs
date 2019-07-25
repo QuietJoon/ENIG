@@ -38,7 +38,7 @@ enigPPP inputStr pppCa
   where
     isSecondType = isLastVowel lastComponent || (pppCa == EuX && isLastR lastComponent)
     selectedPPPIPair = pppidVector V.! fromEnum pppCa
-    -- preprocessForPPP for handling parenthesis, quatation, etc.
+    -- preprocessForPPP for handling parenthesis, quotation, etc.
     preprocessForPPP = id
     preprocessed = preprocessForPPP inputStr
     lastComponent = getLastComponentCode preprocessed
